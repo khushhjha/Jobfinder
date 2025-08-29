@@ -1,0 +1,114 @@
+.App {
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+  position: relative;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  border-radius: 2px;
+  animation: slideIn 1s ease-out 0.5s both;
+}
+
+.app-header h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #fff 0%, #f0f8ff 25%, #e6f3ff 50%, #fff 75%, #f0f8ff 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInDown 1s ease-out, textShimmer 4s ease-in-out infinite;
+  letter-spacing: -2px;
+}
+
+@keyframes textShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes slideIn {
+  from { width: 0; opacity: 0; }
+  to { width: 100px; opacity: 1; }
+}
+
+.app-header p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.95;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.app-header .subtitle-accent {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
+  font-size: 1rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.error-message {
+  background: rgba(255, 107, 107, 0.9);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
