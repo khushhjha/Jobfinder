@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './SearchForm.css';
 
 const SearchForm = ({ setJobs, setLoading, setError }) => {
   const [keyword, setKeyword] = useState('');
   const [location, setLocation] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     if (!keyword.trim()) {
